@@ -12,3 +12,8 @@ audio{width:100%}
 .item:first-of-type{border-top:0}
 footer{background:linear-gradient(#000,#8a8a8a);padding:70px 0 40px;text-align:center}
 footer a{color:#8a2be2;font-size:clamp(40px,11vw,90px);font-weight:900;text-decoration:none}
+.box.latest{background:#000;color:#fff;border:2px solid #8a2be2;border-radius:14px;box-shadow:0 0 18px 4px rgba(138,43,226,.75),0 0 48px 10px rgba(138,43,226,.35)}
+.tag{display:inline-block;margin-bottom:14px;padding:4px 12px;border:2px solid #8a2be2;border-radius:999px;color:#fff;font-size:12px;letter-spacing:2px;text-transform:uppercase}
+.tag-voice{background:#8a2be2}.tag-video{background:#fff;color:#000}
+.rant-text{font-family:Georgia,serif;font-weight:400;font-size:18px;line-height:1.5;text-align:left;white-space:pre-wrap}
+video{width:100%;background:#111}
