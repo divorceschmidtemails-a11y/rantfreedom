@@ -1,6 +1,15 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rant Freedom</title><link rel="stylesheet" href="style.css"></head><body>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rant Freedom · Archive</title><link rel="stylesheet" href="style.css"></head><body>
 <header><h1>Rant Freedom</h1><p><b>rant</b> (noun): a long, loud, passionate speech; to speak at length in an angry or impassioned way.</p></header>
-<main><div class="box" id="box">Loading…</div></main>
-<footer><a href="./">Archive</a></footer>
-<script>fetch('rants/rants.json',{cache:'no-store'}).then(r=>r.json()).then(a=>{const b=document.getElementById('box');if(!a.length){b.innerHTML='<h2>Nothing here yet.</h2>';return}b.innerHTML=a.slice().reverse().map(r=>'<div class="item"><h2>'+new Date(r.date+'T12:00').toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})+'</h2><audio controls preload="none" src="rants/'+r.file+'"></audio></div>').join('')})</script>
+<main><div class="box latest archive" id="box">Loading…</div></main>
+<footer><a href="./">Home</a></footer>
+<script>
+const E="No rant yet.";
+const esc=t=>String(t==null?'':t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const src=r=>'rants/'+encodeURI(r.src||r.file||'');
+const tp=x=>['text','voice','video'].includes(x.type)?x.type:(x.file?'voice':'text');
+const b=document.getElementById('box');
+fetch('rants/rants.json',{cache:'no-store'}).then(r=>r.json()).then(a=>{if(!a.length){b.innerHTML='<h2>'+esc(E)+'</h2>';return}
+b.innerHTML=a.slice().reverse().map(r=>{const t=tp(r);const body=t==='text'?'<p class="rant-text">'+esc(r.body)+'</p>':t==='video'?'<video controls playsinline preload="none" src="'+src(r)+'"></video>':'<audio controls preload="none" src="'+src(r)+'"></audio>';
+return '<div class="item"><span class="tag tag-'+t+'">'+t+'</span><h2>'+new Date(r.date+'T12:00').toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'})+'</h2>'+body+'</div>'}).join('')}).catch(()=>{b.innerHTML='<h2>'+esc(E)+'</h2>'})
+</script>
 </body></html>

@@ -22,3 +22,4 @@ header p b{font-family:"Arial Black",Arial,sans-serif;font-size:1.25em;text-deco
 .tagline{font-family:Arial,sans-serif;font-size:14px;letter-spacing:2px;text-transform:uppercase;margin-top:10px}
 .recent{list-style:none;margin:0 auto 24px;width:min(560px,92%);color:#fff;font-size:16px}
 .recent li{padding:8px 0;border-bottom:1px solid #8a2be2}.recent .ic{margin-right:10px}
+.archive .item{border-top:1px solid #8a2be2;padding:22px 0}.archive .item:first-of-type{border-top:0;padding-top:0}
