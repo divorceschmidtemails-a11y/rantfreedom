@@ -17,3 +17,8 @@ footer a{color:#8a2be2;font-size:clamp(40px,11vw,90px);font-weight:900;text-deco
 .tag-voice{background:#8a2be2}.tag-video{background:#fff;color:#000}
 .rant-text{font-family:Georgia,serif;font-weight:400;font-size:18px;line-height:1.5;text-align:left;white-space:pre-wrap}
 video{width:100%;background:#111}
+header p:not(.tagline){font-size:clamp(17px,4.5vw,24px);font-weight:700}
+header p b{font-family:"Arial Black",Arial,sans-serif;font-size:1.25em;text-decoration:underline;text-decoration-color:#8a2be2;text-decoration-thickness:4px;text-underline-offset:5px}
+.tagline{font-family:Arial,sans-serif;font-size:14px;letter-spacing:2px;text-transform:uppercase;margin-top:10px}
+.recent{list-style:none;margin:0 auto 24px;width:min(560px,92%);color:#fff;font-size:16px}
+.recent li{padding:8px 0;border-bottom:1px solid #8a2be2}.recent .ic{margin-right:10px}
