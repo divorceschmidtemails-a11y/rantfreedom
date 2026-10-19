@@ -1,9 +1,9 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rant Freedom</title><link rel="stylesheet" href="style.css"></head><body>
 <header><h1>Rant Freedom</h1><p><b>rant</b> (noun): a long, loud, passionate speech; to speak at length in an angry or impassioned way.</p></header>
-<main><div class="box latest" id="box">Loading…</div></main>
+<main><div class="box latest" id="box">Loading…</div><div id="countdown" class="countdown" aria-live="polite"></div></main>
 <footer><a href="archive.html">Archive</a></footer>
 <script>
-const E="Weston hasn't let it rip yet. Soon.";
+const E="No rant yet.";
 const esc=t=>String(t==null?'':t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const src=r=>'rants/'+encodeURI(r.src||r.file||'');
 fetch('rants/rants.json',{cache:'no-store'}).then(r=>r.json()).then(a=>{const b=document.getElementById('box');if(!a.length){b.innerHTML='<h2>'+esc(E)+'</h2>';return}const r=a[a.length-1];const t=['text','voice','video'].includes(r.type)?r.type:(r.file?'voice':'text');
